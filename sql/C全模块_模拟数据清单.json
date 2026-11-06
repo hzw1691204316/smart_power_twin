@@ -1,0 +1,26 @@
+{
+  "batch": "sim-full-v1-20261016",
+  "source": "SIMULATED",
+  "expectedFixtureRows": {
+    "sys_role": 3,
+    "sys_permission": 14,
+    "role_permission": 29,
+    "sys_user": 4,
+    "highway_route": 3,
+    "site": 6,
+    "user_site_scope": 10,
+    "site_area": 18,
+    "site_route_link": 6,
+    "device": 24,
+    "device_point": 96,
+    "point_latest": 96,
+    "point_history": 9216,
+    "scene_template": 6,
+    "twin_scene": 6,
+    "twin_object": 24,
+    "twin_binding": 96,
+    "alarm_event": 6,
+    "audit_log": 11
+  },
+  "notice": "为模拟集行数；已有记录保留、原模板/账号仍存在时总数可更多"
+}

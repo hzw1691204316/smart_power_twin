@@ -1,0 +1,372 @@
+/* 统一文字与数字排版；只调整排版，保留已经确认的布局和海蓝主题。 */
+:root {
+  --font-ui:
+    'HarmonyOS Sans SC', 'Segoe UI Variable Text', 'Segoe UI', 'Microsoft YaHei UI',
+    'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif;
+  --font-data: 'Bahnschrift', 'Segoe UI Variable Display', 'Segoe UI', var(--font-ui);
+  --font-caption: 12px;
+  --font-label: 14px;
+  font-family: var(--font-ui);
+  line-height: 1.55;
+  font-kerning: normal;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-ui);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.brand strong {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.brand small {
+  font-family: var(--font-ui);
+  letter-spacing: 1.8px;
+}
+.header-page-context h1 {
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.header-page-context > div {
+  font-size: var(--font-caption);
+  letter-spacing: 0;
+}
+.main-nav > a,
+.nav-label {
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.main-nav a > span,
+.main-nav span span {
+  font-family: var(--font-data);
+  font-size: 11px;
+}
+.panel-heading h2 {
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
+.panel-heading .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+.metric-card strong,
+.region-index,
+.header-meta time,
+.hud-header-clock time,
+.hud-summary-item strong,
+.hud-status-ring strong,
+.hud-device-status dd,
+.hud-power-values strong,
+.hud-daily-energy strong,
+.hud-panel .device-power strong,
+.hud-alarm-ring strong {
+  font-family: var(--font-data);
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+.sidebar-metrics .metric-card strong {
+  font-size: clamp(23px, 1.8vw, 29px);
+}
+.sidebar-metrics .metric-card > div {
+  flex-wrap: wrap;
+  column-gap: 4px;
+  row-gap: 0;
+  align-items: baseline;
+}
+.sidebar-metrics .metric-card > p {
+  font-size: var(--font-caption);
+  line-height: 1.5;
+  min-height: 33px;
+}
+.sidebar-metrics .metric-card > small {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.sidebar-metrics .metric-card > div > span {
+  font-family: var(--font-ui);
+  font-size: 10px;
+}
+.search-field input,
+.filter-row select {
+  font-size: var(--font-label);
+}
+.directory-tabs button,
+.directory-shortcut {
+  font-size: var(--font-caption);
+  line-height: 1.45;
+}
+.site-card-name {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.site-card-name small {
+  font-size: var(--font-caption);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.site-card-bottom,
+.public-directory-note {
+  font-size: var(--font-caption);
+  line-height: 1.5;
+}
+.muted-note,
+.snapshot-subtitle,
+.selection-placeholder small {
+  font-size: var(--font-caption);
+  line-height: 1.7;
+}
+.snapshot-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  overflow-wrap: anywhere;
+}
+.detail-list > div {
+  font-size: var(--font-label);
+}
+.detail-list dd {
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  text-align: right;
+  min-width: 0;
+}
+.primary-button {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.tech-map .map-region-hud strong {
+  font-family: var(--font-ui);
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+.tech-map .map-region-hud small,
+.tech-map .map-source {
+  font-size: var(--font-caption);
+  line-height: 1.55;
+}
+.map-perspective,
+.map-theme-switch button {
+  font-size: 11px;
+  font-weight: 500;
+}
+.hud-title-frame h1 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.hud-title-frame p {
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+.hud-panel h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.hud-panel > header > small {
+  font-size: 8px;
+  letter-spacing: 0.6px;
+}
+.hud-summary-item > span,
+.hud-summary-item small {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.hud-summary-item strong {
+  margin-top: 4px;
+}
+.hud-device-list button {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.hud-device-list button > span:nth-child(2) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.hud-device-list small,
+.hud-data-caption,
+.hud-provenance,
+.hud-panel .muted-note {
+  font-size: 11px;
+  line-height: 1.65;
+}
+.hud-category-rail b,
+.hud-scene-toolbar button {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.hud-panel .snapshot-title {
+  font-size: 16px;
+}
+.hud-panel .snapshot-subtitle,
+.hud-panel .device-power > span,
+.hud-power-values span,
+.hud-daily-energy > span,
+.hud-power-bar {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.hud-panel .detail-list > div {
+  font-size: 12px;
+  gap: 10px;
+}
+.hud-panel .device-power {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.hud-power-values > div {
+  min-width: 0;
+}
+.hud-power-values strong {
+  font-size: clamp(23px, 1.8vw, 29px);
+}
+.hud-panel .device-power small,
+.hud-power-values small,
+.hud-daily-energy small {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 400;
+}
+.hud-bottom-nav button {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+.hud-device-status dl > div,
+.hud-alarm-summary p {
+  font-size: 12px;
+}
+.hud-trend-legend {
+  font-size: 10px;
+}
+.hud-trend-legend small,
+.hud-panel .axis-labels {
+  font-size: 9px;
+}
+@media (min-width: 851px) {
+  .province-shell .app-footer {
+    height: 40px;
+    min-height: 40px;
+    align-items: center;
+    padding-block: 8px;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 1100px) {
+  .province-shell .brand strong {
+    font-size: 14px;
+  }
+  .province-shell .brand small {
+    display: none;
+  }
+  .header-page-context h1 {
+    font-size: 16px;
+  }
+  .province-shell .header-meta time {
+    font-size: 17px;
+  }
+}
+@media (max-width: 900px) {
+  .hud-title-frame p {
+    font-size: 10px;
+  }
+  .hud-summary-item > span,
+  .hud-summary-item small {
+    font-size: 10px;
+  }
+}
+@media (max-width: 520px) {
+  .hud-title-frame p {
+    font-size: 9px;
+  }
+  .hud-summary-item > span {
+    font-size: 9px;
+  }
+  .hud-category-rail b {
+    font-size: 9px;
+  }
+}
+
+/* 地图工作区大字号，降低大屏阅读负担。 */
+.map-workspace {
+  font-size: 14px;
+}
+.map-workspace .panel-heading h2 {
+  font-size: 17px;
+}
+.map-workspace .panel-heading .eyebrow {
+  font-size: 10px;
+}
+.map-workspace .sidebar-metrics .metric-card > p {
+  font-size: 13px;
+}
+.map-workspace .sidebar-metrics .metric-card strong {
+  font-size: clamp(28px, 2vw, 34px);
+}
+.map-workspace .sidebar-metrics .metric-card > small {
+  font-size: 12px;
+}
+.map-workspace .sidebar-metrics .metric-card > div > span {
+  font-size: 12px;
+}
+.map-workspace .site-card-name {
+  font-size: 15px;
+}
+.map-workspace .site-card-name small,
+.map-workspace .site-card-bottom {
+  font-size: 13px;
+}
+.map-workspace .directory-tabs button,
+.map-workspace .directory-shortcut {
+  font-size: 13px;
+}
+.map-workspace .muted-note,
+.map-workspace .snapshot-subtitle,
+.map-workspace .selection-placeholder small {
+  font-size: 13px;
+}
+.map-workspace .detail-list > div,
+.map-workspace .primary-button {
+  font-size: 14px;
+}
+.map-sidebar-controls summary,
+.sidebar-city-picker,
+.sidebar-layer-controls,
+.sidebar-segment button {
+  font-size: 14px;
+}
+.map-sidebar-controls summary small,
+.map-status-text,
+.sidebar-map-legend p,
+.directory-data-notes summary {
+  font-size: 13px;
+}
+.sidebar-map-legend h3 {
+  font-size: 15px;
+}
+.sidebar-map-legend > div {
+  font-size: 14px;
+}
+.workspace-panels-toggle {
+  font-size: 13px;
+}
+.map-workspace .axis-labels {
+  font-size: 11px;
+}

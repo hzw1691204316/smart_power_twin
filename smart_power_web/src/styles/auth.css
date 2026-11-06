@@ -1,0 +1,347 @@
+/* 仅账号相关样式；保留现有地图、悬浮侧栏和孪生大屏主题。 */
+.auth-page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background: radial-gradient(ellipse at 30% 10%, #164a74 0%, #0c2745 48%, #071d32 100%);
+  color: #e6f5ff;
+}
+.auth-card {
+  width: min(100%, 480px);
+  padding: 38px;
+  border: 1px solid #397ca4;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #17436ac9, #0c2a47e8);
+  box-shadow: 0 25px 80px #03152680;
+}
+.auth-symbol {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #17638d;
+  color: #51e6ed;
+  font-size: 40px;
+}
+.auth-eyebrow {
+  margin: 20px 0 12px;
+  color: #7ad6f5;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.auth-card h1 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+.auth-description,
+.account-hint {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #aacce1;
+}
+.account-form {
+  display: grid;
+  gap: 10px;
+}
+.account-form > label {
+  font-size: 15px;
+  color: #d6eefd;
+  margin-top: 10px;
+}
+.account-form input:not([type='checkbox']),
+.account-form select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 13px;
+  color: #f0faff;
+  background: #092540;
+  border: 1px solid #477da0;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 16px;
+}
+.account-form input::placeholder {
+  color: #8cacc1;
+}
+.account-form fieldset {
+  margin: 12px 0;
+  padding: 14px;
+  border: 1px solid #477da0;
+  border-radius: 12px;
+}
+.account-form legend {
+  padding: 0 8px;
+  color: #b5d7e9;
+  font-size: 14px;
+}
+.account-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.account-check input {
+  width: 17px;
+  height: 17px;
+  accent-color: #32c9ee;
+}
+.password-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.password-input button,
+.account-actions button,
+.account-pagination button {
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #427a9e;
+  background: #123b5b;
+  color: #def3ff;
+  font: inherit;
+  cursor: pointer;
+}
+.account-form .account-primary {
+  min-height: 46px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid #39c2ef;
+  background: linear-gradient(120deg, #1685be, #1769a6);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.account-form button:disabled,
+.accounts-page button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.account-error,
+.account-success {
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.account-error {
+  color: #ffd3be;
+  background: #663d293d;
+  border: 1px solid #976143;
+}
+.account-success {
+  color: #baf9eb;
+  background: #165e5440;
+  border: 1px solid #398777;
+}
+.account-menu {
+  position: relative;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.account-menu summary {
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 7px 12px;
+  background: #123b5bc9;
+  border: 1px solid #4682a2;
+  border-radius: 12px;
+  color: #d6f5ff;
+}
+.account-menu-panel {
+  position: absolute;
+  z-index: 200;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  gap: 6px;
+  min-width: 175px;
+  border: 1px solid #4b8dac;
+  padding: 10px;
+  background: #0d2c48fa;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px #0006;
+}
+.account-menu-panel > span {
+  color: #a4c7de;
+  padding: 8px;
+}
+.account-menu-panel > a,
+.account-menu-panel > button {
+  display: block;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  color: #def5ff;
+  background: #154363;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.hud-header-left .account-menu-panel {
+  left: 0;
+  right: auto;
+}
+.accounts-page {
+  width: min(1500px, 100%);
+  padding: 26px 30px;
+  margin: auto;
+  color: #e2f3ff;
+}
+.accounts-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.accounts-heading h1 {
+  margin: 0;
+  font-size: 26px;
+}
+.accounts-heading a {
+  color: #8edbff;
+}
+.accounts-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  margin-top: 22px;
+}
+.account-panel {
+  padding: 24px;
+  background: #11395baf;
+  border: 1px solid #36799e;
+  border-radius: 22px;
+}
+.account-panel h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+.account-panel h2 small {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #9fc8de;
+}
+.account-table-wrap {
+  overflow-x: auto;
+}
+.account-list table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.account-list th {
+  text-align: left;
+  color: #92c5df;
+  font-weight: 500;
+}
+.account-list th,
+.account-list td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #3e749154;
+  vertical-align: top;
+}
+.account-list td small {
+  display: block;
+  color: #99c1d7;
+}
+.account-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.account-pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: end;
+  margin-top: 20px;
+}
+.scope-editor {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid #4588a2;
+}
+.account-menu :focus-visible,
+.auth-page :focus-visible,
+.accounts-page :focus-visible {
+  outline: 2px solid #6be6ff;
+  outline-offset: 3px;
+}
+@media (max-width: 1300px) {
+  .header-meta .timezone {
+    display: none;
+  }
+  .account-menu summary {
+    max-width: 118px;
+  }
+}
+@media (max-width: 1000px) {
+  .header-meta > time {
+    display: none;
+  }
+  .accounts-grid {
+    grid-template-columns: 1fr;
+  }
+  .hud-header-left {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 26px 22px;
+  }
+  .auth-card h1 {
+    font-size: 23px;
+  }
+  .accounts-page {
+    padding: 20px 14px;
+  }
+  .account-panel {
+    padding: 18px;
+  }
+  .accounts-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+  .account-menu summary {
+    font-size: 12px;
+    max-width: 100px;
+  }
+}
+/* 新身份入口占用原页头空间，窄屏优先保留业务标题、返回入口与账号操作。 */
+@media (min-width: 851px) and (max-width: 1450px) {
+  .province-shell .header-meta > time,
+  .province-shell .header-meta > .demo-chip {
+    display: none;
+  }
+}
+@media (max-width: 1150px) {
+  .hud-header-left {
+    max-width: 180px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hud-header-left .hud-home-link {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .hud-header-left {
+    max-width: 95px;
+  }
+  .hud-header-left .account-menu summary {
+    padding: 5px;
+    max-width: 90px;
+  }
+}

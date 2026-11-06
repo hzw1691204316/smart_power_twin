@@ -1,0 +1,340 @@
+/* 地图铺满工作区；面板透明度只作用于背景，文字保持清晰。 */
+.province-shell .app-main {
+  padding: 0;
+}
+.map-workspace.overview-grid,
+.map-workspace.province-grid {
+  --workspace-left-width: clamp(310px, 20vw, 380px);
+  --workspace-right-width: clamp(320px, 21vw, 400px);
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  height: calc(100dvh - 74px);
+  min-height: 480px;
+  overflow: hidden;
+}
+.workspace-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.map-workspace .workspace-map > .map-wrap {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.workspace-map > .empty-state {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d1eeff;
+}
+.workspace-left,
+.workspace-right {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  z-index: 2;
+  min-height: 0;
+}
+.workspace-left {
+  left: 16px;
+  width: var(--workspace-left-width);
+}
+.workspace-right {
+  right: 16px;
+  width: var(--workspace-right-width);
+}
+.map-workspace .workspace-left > .panel-card,
+.map-workspace .workspace-right .panel-card {
+  padding: 18px;
+  background: linear-gradient(135deg, #103c60c7, #0b2d4fb3);
+  border-color: #4a9bc07d;
+  box-shadow:
+    inset 0 1px #b4edff16,
+    0 8px 24px #041a3433;
+}
+.workspace-left > .panel-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 0;
+}
+.workspace-left > .panel-card > :not(.site-list) {
+  flex-shrink: 0;
+}
+.map-workspace .workspace-left .site-list {
+  flex: 1 0 170px;
+  min-height: 170px;
+  max-height: none;
+  overflow-y: auto;
+}
+.map-workspace .workspace-right > .right-stack {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-column: auto;
+  gap: 14px;
+  overflow-y: auto;
+}
+.map-workspace .workspace-right .panel-card {
+  flex: 1 0 auto;
+}
+.map-workspace .site-card {
+  background: #0c3458b8;
+}
+.map-workspace .site-card.selected {
+  background: linear-gradient(110deg, #155d86e6, #123e67d9);
+}
+.map-workspace .panel-heading {
+  margin-bottom: 16px;
+}
+.map-workspace .selection-placeholder {
+  min-height: 150px;
+  height: auto;
+  padding: 24px 0;
+}
+.map-sidebar-controls {
+  border: 1px solid #4386aa70;
+  border-radius: 12px;
+  background: #0b2b4770;
+  margin-bottom: 14px;
+}
+.map-sidebar-controls summary {
+  padding: 11px 12px;
+  color: #d9f3ff;
+  cursor: pointer;
+}
+.map-sidebar-controls summary > span {
+  font-weight: 600;
+}
+.map-sidebar-controls summary small {
+  margin-left: 10px;
+  color: #9cd2ec;
+}
+.map-settings-body {
+  padding: 0 12px 12px;
+}
+.map-status-text {
+  margin-bottom: 12px;
+  color: #b7ddf3;
+  overflow-wrap: anywhere;
+}
+.sidebar-city-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #bcdcf0;
+}
+.sidebar-city-picker select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #4384ac;
+  background: #103755;
+  color: #e5f4ff;
+}
+.province-switcher {
+  margin: 14px 0 18px;
+}
+.sidebar-segment {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px;
+  background: #082740a3;
+  border-radius: 12px;
+}
+.sidebar-segment button {
+  flex: 1;
+  padding: 8px 5px;
+  background: transparent;
+  color: #b8d9ee;
+  border-radius: 9px;
+}
+.sidebar-segment button[aria-pressed='true'] {
+  background: #1b6795;
+  color: #ebfbff;
+}
+.sidebar-layer-controls {
+  display: flex;
+  gap: 18px;
+  margin-top: 12px;
+  color: #c8e5f5;
+}
+.sidebar-layer-controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sidebar-layer-controls input {
+  accent-color: #45e3ef;
+}
+.sidebar-map-legend {
+  padding: 0 0 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #4a88ab60;
+}
+.sidebar-map-legend h3 {
+  margin-bottom: 12px;
+  color: #d5efff;
+}
+.sidebar-map-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: #cce5f8;
+}
+.sidebar-map-legend i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-service {
+  background: #3cf1d2;
+  box-shadow: 0 0 6px #3cf1d233;
+}
+.legend-toll {
+  background: #ffbc67;
+}
+.sidebar-map-legend .legend-road {
+  height: 3px;
+  width: 16px;
+  border-radius: 2px;
+  background: #538fff;
+}
+.sidebar-map-legend p {
+  margin-top: 12px;
+  color: #a8cce4;
+  line-height: 1.65;
+}
+.directory-data-notes {
+  margin-top: 10px;
+  color: #afcee4;
+}
+.directory-data-notes summary {
+  cursor: pointer;
+}
+.workspace-panels-toggle {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  color: #cfedff;
+  background: #0c3454c9;
+  border: 1px solid #4a99be7d;
+  border-radius: 12px;
+}
+.map-workspace.panels-hidden {
+  --workspace-left-width: 0px;
+  --workspace-right-width: 0px;
+}
+/* 保持地图供应商标识和数据署名可见，不与侧栏重叠。 */
+.map-workspace .cesium-viewer-bottom {
+  left: calc(var(--workspace-left-width) + 32px);
+  right: calc(var(--workspace-right-width) + 32px);
+  max-width: none;
+  bottom: 8px !important;
+}
+.map-workspace .cesium-credit-textContainer {
+  font-size: 10px !important;
+}
+.map-workspace .south-sea-inset {
+  right: calc(var(--workspace-right-width) + 32px);
+  bottom: 44px;
+  border-radius: 10px;
+}
+.map-workspace .map-hover-name {
+  left: calc(var(--workspace-left-width) + 32px);
+  top: 16px;
+}
+.map-workspace .map-warning {
+  left: calc(var(--workspace-left-width) + 32px);
+  right: calc(var(--workspace-right-width) + 32px);
+  bottom: 42px;
+  z-index: 1;
+}
+.workspace-left > .panel-card,
+.workspace-right .right-stack {
+  scrollbar-width: thin;
+  scrollbar-color: #4185a3 transparent;
+}
+@media (max-width: 1000px) {
+  .map-workspace.overview-grid,
+  .map-workspace.province-grid {
+    display: grid;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'map map' 'left right';
+    gap: 12px;
+    padding: 12px;
+    overflow: visible;
+  }
+  .workspace-map {
+    position: relative;
+    inset: auto;
+    grid-area: map;
+    height: clamp(420px, 65dvh, 620px);
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .workspace-left,
+  .workspace-right {
+    position: relative;
+    inset: auto;
+    width: auto;
+    min-width: 0;
+  }
+  .workspace-left {
+    grid-area: left;
+  }
+  .workspace-right {
+    grid-area: right;
+  }
+  .workspace-left > .panel-card,
+  .map-workspace .workspace-right > .right-stack {
+    height: auto;
+    overflow: visible;
+  }
+  .map-workspace .workspace-left .site-list {
+    max-height: 360px;
+    flex: none;
+  }
+  .workspace-panels-toggle {
+    top: 26px;
+  }
+  .map-workspace .cesium-viewer-bottom {
+    left: 10px;
+    right: 10px;
+  }
+  .map-workspace .south-sea-inset {
+    right: 14px;
+  }
+  .map-workspace .map-hover-name {
+    left: 14px;
+    top: 70px;
+  }
+  .map-workspace .map-warning {
+    left: 14px;
+    right: 14px;
+  }
+}
+@media (max-width: 650px) {
+  .map-workspace.overview-grid,
+  .map-workspace.province-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'map' 'left' 'right';
+  }
+}

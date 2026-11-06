@@ -1,0 +1,8 @@
+# 已在当前Python 3.10环境安装并验证的运行依赖。
+fastapi==0.143.0
+uvicorn==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.15.0
+SQLAlchemy==2.0.54
+PyMySQL[rsa]==1.2.3
+PyJWT==2.15.1

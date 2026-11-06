@@ -1,0 +1,92 @@
+@baseUrl = http://127.0.0.1:8000
+# 先运行下面的登录请求，复制data.accessToken到此处；不要提交真实令牌。
+@accessToken =
+@loginPassword =
+
+### MySQL登录：填写网页账号的当前密码，不是数据库root连接密码
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{"username":"mysql_admin","password":"{{loginPassword}}"}
+
+### 当前身份
+GET {{baseUrl}}/api/v1/auth/me
+Authorization: Bearer {{accessToken}}
+
+### 账号列表
+GET {{baseUrl}}/api/v1/users?page=1&pageSize=20
+Authorization: Bearer {{accessToken}}
+
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+
+# 健康检查：应显示dataSource=mysql，database=smart_power_twin
+GET {{baseUrl}}/api/v1/health
+
+###
+# 两座演示站点；每个响应meta都明确说明数据来源
+GET {{baseUrl}}/api/v1/sites
+Authorization: Bearer {{accessToken}}
+
+###
+# 组合检索：应只返回朝歌服务区
+GET {{baseUrl}}/api/v1/sites?q=鹤壁%20朝歌%20S26&siteType=SERVICE&provinceCode=410000&cityName=鹤壁市&highway=S26
+Authorization: Bearer {{accessToken}}
+
+###
+# 站点详情：1为服务区，2为收费站（仅本轮内存演示ID）
+GET {{baseUrl}}/api/v1/sites/1
+Authorization: Bearer {{accessToken}}
+
+###
+# 本站4台设备；仅额定参数，无实时读数
+GET {{baseUrl}}/api/v1/sites/1/devices
+Authorization: Bearer {{accessToken}}
+
+###
+# 储能设备筛选，应返回额定储能215kWh的演示柜
+GET {{baseUrl}}/api/v1/sites/1/devices?systemType=ESS
+Authorization: Bearer {{accessToken}}
+
+###
+# 本站设备详情
+GET {{baseUrl}}/api/v1/sites/1/devices/101
+Authorization: Bearer {{accessToken}}
+
+###
+# 归属检查：101属于站点1，此请求应返回404
+GET {{baseUrl}}/api/v1/sites/2/devices/101
+Authorization: Bearer {{accessToken}}
+
+###
+GET {{baseUrl}}/api/v1/sites/1/areas
+Authorization: Bearer {{accessToken}}
+
+###
+# 首模块业务路线目录仅包含演示关联S26，不是全省高速路网
+GET {{baseUrl}}/api/v1/highways
+Authorization: Bearer {{accessToken}}
+
+###
+# G4不得误匹配其他编号；当前无G4台账，返回空列表
+GET {{baseUrl}}/api/v1/sites?highway=G4
+Authorization: Bearer {{accessToken}}
+
+###
+# 分页
+GET {{baseUrl}}/api/v1/sites?page=2&pageSize=1
+Authorization: Bearer {{accessToken}}
+
+###
+# 错误参数，应返回422
+GET {{baseUrl}}/api/v1/sites?pageSize=101
+Authorization: Bearer {{accessToken}}
